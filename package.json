@@ -3,8 +3,35 @@
     "version": "1.0.0",
     "description": "Empty electron project",
     "main": "src/main/main.js",
+    "license": "MIT",
     "scripts": {
-        "start": "./node_modules/.bin/electron ."
+        "ng": "ng",
+        "start": "NODE_EBV=production ./node_modules/.bin/electron .",
+        "dev:renderer": "ng serve"
+    },
+    "dependencies": {
+        "@angular/animations": "^4.2.4",
+        "@angular/common": "^4.2.4",
+        "@angular/compiler": "^4.2.4",
+        "@angular/core": "^4.2.4",
+        "@angular/forms": "^4.2.4",
+        "@angular/http": "^4.2.4",
+        "@angular/platform-browser": "^4.2.4",
+        "@angular/platform-browser-dynamic": "^4.2.4",
+        "@angular/router": "^4.2.4",
+        "core-js": "^2.4.1",
+        "rxjs": "^5.4.2",
+        "zone.js": "^0.8.14"
+    },
+    "devDependencies": {
+        "@angular/cli": "^1.3.1",
+        "@angular/compiler-cli": "^4.2.4",
+        "@angular/language-service": "^4.2.4",
+        "@types/node": "~6.0.60",
+        "electron": "^1.7.5",
+        "ts-node": "~3.2.0",
+        "tslint": "~5.3.2",
+        "typescript": "~2.3.3"
     },
     "repository": {
         "type": "git",
@@ -12,12 +39,8 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
     "bugs": {
         "url": "https://github.com/lleohao/electron-base/issues"
     },
-    "homepage": "https://github.com/lleohao/electron-base#readme",
-    "devDependencies": {
-        "electron": "^1.7.5"
-    }
+    "homepage": "https://github.com/lleohao/electron-base#readme"
 }

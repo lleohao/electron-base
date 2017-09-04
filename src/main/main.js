@@ -4,14 +4,22 @@ const url = require('url')
 
 let win
 
+function isDev() {
+    return process.env['NODE_ENV'] === 'production'
+}
+
 function createWindow() {
     win = new BrowserWindow({ width: 800, height: 600 })
 
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '../renderer/index.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
+    if (isDev) {
+        win.loadURL('http://127.0.0.1:4200');
+    } else {
+        win.loadURL(url.format({
+            pathname: path.join(__dirname, '../renderer/index.html'),
+            protocol: 'file:',
+            slashes: true
+        }))
+    }
 
     // Open the DevTools.
     win.webContents.openDevTools()
