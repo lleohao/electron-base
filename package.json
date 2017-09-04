@@ -1,0 +1,23 @@
+{
+    "name": "electron-base",
+    "version": "1.0.0",
+    "description": "Empty electron project",
+    "main": "src/main/main.js",
+    "scripts": {
+        "start": "./node_modules/.bin/electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lleohao/electron-base.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/lleohao/electron-base/issues"
+    },
+    "homepage": "https://github.com/lleohao/electron-base#readme",
+    "devDependencies": {
+        "electron": "^1.7.5"
+    }
+}
