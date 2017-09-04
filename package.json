@@ -2,12 +2,19 @@
     "name": "electron-base",
     "version": "1.0.0",
     "description": "Empty electron project",
-    "main": "src/main/main.js",
     "license": "MIT",
+    "main": "out/main/main.js",
+    "author": "lleohao <lleohao@hotmail.com>",
     "scripts": {
         "ng": "ng",
-        "start": "NODE_EBV=production ./node_modules/.bin/electron .",
-        "dev:renderer": "ng serve"
+        "start": "nodemon --watch src/main --watch src/shared --exec './node_modules/.bin/electron' ./out/main/main.js",
+        "dev:renderer": "ng serve",
+        "dev:main": "tsc -p ./src/tsconfig.main.json -w",
+        "pack": "electron-builder -m --dir",
+        "build:renderer": "ng build --prod",
+        "build:main": "tsc -p ./src/tsconfig.main.json",
+        "dist": "electron-builder -m",
+        "build": "npm run build:renderer && npm run build:main && npm run dist "
     },
     "dependencies": {
         "@angular/animations": "^4.2.4",
@@ -29,6 +36,7 @@
         "@angular/language-service": "^4.2.4",
         "@types/node": "~6.0.60",
         "electron": "^1.7.5",
+        "electron-builder": "^19.27.3",
         "ts-node": "~3.2.0",
         "tslint": "~5.3.2",
         "typescript": "~2.3.3"
@@ -38,9 +46,14 @@
         "url": "git+https://github.com/lleohao/electron-base.git"
     },
     "keywords": [],
-    "author": "",
     "bugs": {
         "url": "https://github.com/lleohao/electron-base/issues"
     },
-    "homepage": "https://github.com/lleohao/electron-base#readme"
+    "homepage": "https://github.com/lleohao/electron-base#readme",
+    "build": {
+        "appId": "com.lleohao.sample",
+        "mac": {
+            "category": "public.app-category.productivity"
+        }
+    }
 }
