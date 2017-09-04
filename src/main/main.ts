@@ -5,7 +5,7 @@ const url = require('url')
 let win
 
 function isDev() {
-    return process.env['NODE_ENV'] === 'production'
+    return process.env['NODE_ENV'] === 'development'
 }
 
 function createWindow() {

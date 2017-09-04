@@ -7,6 +7,7 @@
         {
             "root": "src/renderer",
             "outDir": "out/renderer",
+            "baseHref": "./",
             "assets": [
                 "assets",
                 "favicon.ico"
